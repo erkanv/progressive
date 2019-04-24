@@ -18,6 +18,10 @@ public class HomePage {
 	}
 	
 	
+	@FindBy(xpath = "//*[@id='UnlistedVehicleFormModel_OwnOrLease_Value']")
+	public WebElement dd; 
+	
+	
 	@FindBy(xpath = "//a[@aria-label='Auto insurance']")
 	public WebElement auto; 
 	
@@ -125,6 +129,24 @@ public class HomePage {
 	
 	@FindBy(xpath="(//div[@class='text'])[1]")
 	public WebElement result;
+	
+	
+	public void selectOption(String opt, String elementRef) {	
+		
+		switch (elementRef) {
+		case opt:
+			Select dropdown = new Select(dd);
+			dropdown.selectByVisibleText(opt);
+			break;
+
+		default:
+			break;
+		}
+		
+		
+	}
+	
+	
 	
 	
 }

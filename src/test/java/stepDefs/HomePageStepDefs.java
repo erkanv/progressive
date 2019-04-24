@@ -120,12 +120,9 @@ public class HomePageStepDefs {
 		dropdown.selectByVisibleText("Personal (to/from work or school, errands, pleasure)");
 	}
 
-	@When("user selects if the car is owned or leased")
-	public void user_selects_if_the_car_is_owned_or_leased() throws InterruptedException {
-		Thread.sleep(1000);
-		WebElement dd = driver.findElement(By.xpath("//*[@id='UnlistedVehicleFormModel_OwnOrLease_Value']"));
-		Select dropdown = new Select(dd);
-		dropdown.selectByVisibleText("Own");
+	@When("user selects if the car is \"([^\"]*)\" as \"([^\"]*)\"$")
+	public void user_selects_if_the_car_is_owned_or_leased(String text, String elementRef) throws InterruptedException {
+		hp.selectOption(text,elementRef);
 	}
 
 	@When("the user selects for how lond the car has been owned")
