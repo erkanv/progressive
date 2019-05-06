@@ -19,8 +19,8 @@ Scenario: Insurance quote for one person
 	And the user chooses the model of the vehicle
 	And the user selects body type
 	And the user selects the purpose of use
-	And user selects if the car is "Own" as "lease option"
-	And the user selects for how lond the car has been owned
+	And user selects if the car is Own as lease option
+	And the user selects for how long the car has been owned
 	And the user clicks on the Done button
 	And the user clicks on the Save and Continue button
 	And the user chooses the gender
